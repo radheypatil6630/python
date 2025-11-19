@@ -1,21 +1,37 @@
 print ("file operation ")
 import os
 
+
 with open('example.txt','r') as file:
     content=file.read()
-print(content)
+    print(content)
+    
+    file.close()
 
-with open('example.txt','w') as file:  #previous data are replaced by new data
-    print(file.write("how are you "))
+    
+
+with open('example.txt','w') as file1:
+    file1.write(" add new data")
+    # file1.seek(0)
+    
+    
+with open ('example.txt','a+') as file:
+    file.write(" add at end ")
+    file.seek(0)
+    data=file.read()
+    print("data write :- "+data)
+    
+f=open('example.txt','r+') 
+print(f.read())
+f.write(" after taking r+ mode")
+
+f=open('example.txt','+at')
+f.write(" new data")
+
+f=open('example.txt','wt')
+f.write(" new data")
 
 
-f = open("example.txt", "a")
-f.write("Now the file has more content!")
-f.close()
+# os.remove('newfile1.txt')#deleted
+print("file deleted")
 
-
-f = open("newfile.txt", "x")#create a new file
-
-
-
-os.remove("newfile.txt")#delete file

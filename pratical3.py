@@ -76,8 +76,6 @@ print(d)
 d.update(a)
 print("after update operation : ",d)
 
-d.pop()
-print("after pop operation : ",d)
 
 d.items()
 print("after show items : ",d)
